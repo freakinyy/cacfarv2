@@ -168,8 +168,8 @@ int main(int argc, const char* const argv[])
 	double f0 = 24.25e9;
 	double T = 0.0002;
 	double B = 400e6;
-	double L = 512;
-	double N = 4096;
+	double L = 256;
+	double N = 2048;
 	double Npad = 1;
 	double Lpad = 1;
 
