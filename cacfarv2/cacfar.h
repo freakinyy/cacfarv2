@@ -18,7 +18,7 @@
 
 /* Function Declarations */
 extern void cacfar(double c, double T, double B, double L, double N, double Npad,
-                   double Lpad, const creal_T sigReceive[524288],
+                   double Lpad, const creal_T* sigReceive,
                    emxArray_real_T *Range_Dopple_Map, emxArray_real_T *CFAR_Map,
                    emxArray_real_T *CFAR_MapRange_Dim, emxArray_real_T
                    *CFAR_MapVelocity_Dim, emxArray_real_T *CRange_Dopple_Map, LONGLONG* ll);

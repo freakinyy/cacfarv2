@@ -39,7 +39,7 @@
  * Return Type  : void
  */
 void cacfar(double c, double T, double B, double L, double N, double Npad,
-	double Lpad, const creal_T sigReceive[524288], emxArray_real_T
+	double Lpad, const creal_T* sigReceive, emxArray_real_T
 	* Range_Dopple_Map, emxArray_real_T* CFAR_Map, emxArray_real_T
 	* CFAR_MapRange_Dim, emxArray_real_T* CFAR_MapVelocity_Dim,
 	emxArray_real_T* CRange_Dopple_Map, LONGLONG* ll)
@@ -61,7 +61,8 @@ void cacfar(double c, double T, double B, double L, double N, double Npad,
 	double a;
 	int jj;
 	emxArray_creal_T* sigRfft;
-	creal_T c_hanning1[2048];
+	//creal_T c_hanning1[2048];
+	creal_T* c_hanning1 = malloc((size_t)N * sizeof(creal_T));;
 	emxArray_creal_T* b_sigRWin;
 	emxArray_creal_T* r0;
 	emxArray_creal_T* sigDWin;
@@ -130,6 +131,7 @@ void cacfar(double c, double T, double B, double L, double N, double Npad,
 
 		/*  " .* "即矩阵对应元素相乘，两个矩阵必须满足规格相同。A.'是对矩阵A一般转置，A’是共轭转置，即对矩阵中每个元素先求共轭再转置，因为这是实数矩阵所以二者结果一致 */
 	}
+	free(c_hanning1);
 
 	emxInit_real_T(&sigRfft_tmp, 2);
 

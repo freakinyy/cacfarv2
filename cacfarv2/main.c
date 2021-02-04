@@ -161,15 +161,15 @@ int main(int argc, const char* const argv[])
 	(void)argc;
 	(void)argv;
 
-	int runtimes = 1;
-	int showdebug = 1;
+	int runtimes = 64;
+	int showdebug = 0;
 
 	double c = 3e8;
 	double f0 = 24.25e9;
 	double T = 0.0002;
 	double B = 400e6;
-	double L = 256;
-	double N = 2048;
+	double L = 512;
+	double N = 4096;
 	double Npad = 1;
 	double Lpad = 1;
 
