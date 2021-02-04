@@ -161,8 +161,18 @@ int main(int argc, const char* const argv[])
 	(void)argc;
 	(void)argv;
 
-	int runtimes = 256;
-	int showdebug = 0;
+	int runtimes = 1;
+	int showdebug = 1;
+
+	double c = 3e8;
+	double f0 = 24.25e9;
+	double T = 0.0002;
+	double B = 400e6;
+	double L = 256;
+	double N = 2048;
+	double Npad = 1;
+	double Lpad = 1;
+
 	LARGE_INTEGER pf;
 	QueryPerformanceFrequency(&pf);
 	LONGLONG ll[3];
@@ -177,14 +187,6 @@ int main(int argc, const char* const argv[])
 	for (int ri = 0; ri != runtimes; ++ri)
 	{
 		printf("%d\n", ri);
-		double c = 3e8;
-		double f0 = 24.25e9;
-		double T = 0.0002;
-		double B = 400e6;
-		double L = 256;
-		double N = 2048;
-		double Npad = 1;
-		double Lpad = 1;
 		emxArray_creal_T* sigReceive;
 		emxArray_real_T* Range_Dopple_Map;
 		emxArray_real_T* CFAR_Map;
